@@ -89,10 +89,10 @@ DATABASES = {
     # }
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'Vestas Wind Systems',
-        'USER': 'postgres',
-        'PASSWORD': 'student',
-        'HOST': 'localhost',
+        'HOST': 'ec2-44-206-137-96.compute-1.amazonaws.com',
+        'NAME': 'd96qmcpsnso77u',
+        'USER': 'ycggwjwjlaiocu',
+        'PASSWORD': '911fb53f6a9e09ee53bc137774b54a2edca327d69b4228d79b397be71a18538c',
         'PORT': '5432',
     }    
 
@@ -137,6 +137,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "project/static")]
 STATIC_ROOT = os.path.join(BASE_DIR, "project/staticfiles")
 STATIC_URL = 'project/static/'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
