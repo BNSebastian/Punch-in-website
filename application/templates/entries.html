@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="table-responsive">
+        {% if user.is_authenticated %}
+            <table class="table table-striped">
+                <tr>
+                    <th> Reason </th>
+                    {% comment %} <th> Description </th> {% endcomment %}
+                    <th> Date </th>
+                    <th> Started: </th>
+                    <th> Ended: </th>
+                    <th> Trash </th>
+                </tr>
+            {% for object in objectList %}
+                {% if user.id == object.user.id %}
+                    <tr>
+                        <td> {{object.reason}} </td>
+                        {% comment %} <td> {{object.description}} </td> {% endcomment %}
+                        <td> {{object.date}} </td>
+                        <td> {{object.start_date}} </td>
+                        <td> {{object.end_date}} </td>
+                        <td> 
+                            <a class="danger" href="{% url 'delete' object.id %}"> delete </a> 
+                        </td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+            </table>
+        {% else %}
+            <p>Hello, guest, if you already have an account, please <a href="{% url 'login' %}">log in</a>. Otherwise, you can <a href="{% url 'register' %}">register</a> one.
+        {% endif %}
+    </div>
+    
+{% endblock %}

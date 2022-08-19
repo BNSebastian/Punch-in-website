@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        <div>
+            <h5 class="d-flex justify-content-center"> Time spent traveling </h5>
+            <table class="table table-striped">
+                <tr>
+                    <th> Month </th>
+                    <th> Name </th>
+                    <th> Surname </th>
+                    <th> Time </th>
+                </tr>
+                
+                {% for object in travelTime %}
+                    <tr>
+                        <td> {{object.month}} </td>
+                        <td> {{object.name}} </td>
+                        <td> {{object.surname}} </td>
+                        <td> {{object.time}} </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        <div>
+            <h5 class="d-flex justify-content-center"> Time spent working </h5>
+            <table class="table table-striped">
+                <tr>
+                    <th> Month </th>
+                    <th> Name </th>
+                    <th> Surname </th>
+                    <th> Time </th>
+                </tr>
+                
+                {% for object in workTime %}
+                    <tr>
+                        <td> {{object.month}} </td>
+                        <td> {{object.name}} </td>
+                        <td> {{object.surname}} </td>
+                        <td> {{object.time}} </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    {% else %}
+        <p>Hello, guest, if you already have an account, please <a href="{% url 'login' %}">log in</a>. Otherwise, you can <a href="{% url 'register' %}">register</a> one.
+    {% endif %}
+{% endblock %}

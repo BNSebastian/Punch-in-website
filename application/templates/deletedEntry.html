@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        <p class="alert alert-warning" role="alert"> The specified entry has been deleted! </p>
+    {% else %}
+        <p>Hello, guest, if you already have an account, please <a href="{% url 'login' %}">log in</a>. Otherwise, you can <a href="{% url 'register' %}">register</a> one.
+    {% endif %}
+
+{% endblock %}

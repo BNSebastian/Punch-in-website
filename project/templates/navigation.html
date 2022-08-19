@@ -1,0 +1,74 @@
+<div class="d-flex justify-content-center">
+    <div class="btn-group" role="group" aria-label="Basic outlined example">
+    {% if user.is_superuser %}
+        <ul>
+            <li>
+                <button type="button" class="btn btn-outline-primary"> 
+                    <a href="{% url 'homepage' %}">Home</a> 
+                </button>
+
+                <button type="button" class="btn btn-outline-primary"> 
+                    <a href="{% url 'pontaj' %}">Pontaj</a>
+                </button>
+
+                <button type="button" class="btn btn-outline-primary"> 
+                    <a href="{% url 'entries' %}">Entries</a>
+                </button>
+
+                <button type="button" class="btn btn-outline-primary"> 
+                    <a href="{% url 'time' %}">Time</a>
+                </button>
+
+                <button type="button" class="btn btn-outline-primary"> 
+                    <a href="{% url 'logout' %}">Logout</a>
+                </button>
+            </li>
+            <li class="d-flex justify-content-center">
+                <button type="button" class="btn btn-outline-primary"> 
+                    <a href="{% url 'entries_all' %}">All entries</a>
+                </button>
+
+                <button type="button" class="btn btn-outline-primary"> 
+                    <a href="{% url 'time_all' %}">All Time</a>
+                </button>
+            </li>
+        </ul>
+    {% elif user.is_authenticated %}
+
+        <button type="button" class="btn btn-outline-primary"> 
+            <a href="{% url 'homepage' %}">Home</a> 
+        </button>
+
+        <button type="button" class="btn btn-outline-primary"> 
+            <a href="{% url 'pontaj' %}">Pontaj</a>
+        </button>
+
+        <button type="button" class="btn btn-outline-primary"> 
+            <a href="{% url 'entries' %}">Entries</a>
+        </button>
+
+        <button type="button" class="btn btn-outline-primary"> 
+            <a href="{% url 'time' %}">Time</a>
+        </button>
+
+        <button type="button" class="btn btn-outline-primary"> 
+            <a href="{% url 'logout' %}">Logout</a>
+        </button>
+        
+    {% else %}
+
+        <button type="button" class="btn btn-outline-primary"> 
+            <a href="{% url 'homepage' %}">Home</a> 
+        </button>
+
+        <button type="button" class="btn btn-outline-primary"> 
+            <a href="{% url 'login' %}">Login</a>
+        </button>
+
+        <button type="button" class="btn btn-outline-primary"> 
+            <a href="{% url 'register' %}">Register</a>
+        </button>
+
+    {% endif %}
+    </div>
+</div>

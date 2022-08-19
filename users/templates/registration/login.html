@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+  
+  {%  if messages %}
+    {% for message in messages %}
+      <div>{{message}}</div>
+    {% endfor%}
+  {% endif %}
+
+  <div class="d-flex justify-content-center">
+    <form method="POST" action="">
+        {% csrf_token %}
+
+        <div>
+          <label for="username" class="form-label">Username</label>
+          <input type="text" name="username">
+        </div>
+
+        <div>
+          <label for="password" class="form-label">Password</label>
+          <input type="password" name="password">
+        </div>
+
+        <div class="d-flex justify-content-center">
+          <input class="btn btn-outline-primary" type="submit" value="Submit">
+        </div>
+    </form>
+  </div>
+{% endblock %}

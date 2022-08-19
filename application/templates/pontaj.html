@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    {% if submitted %}
+    <div class="alert alert-warning" role="alert">
+        Your form was submitted succesfuly!
+    </div>
+    {% endif %}
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="d-flex justify-content-center">
+            <input class="btn btn-outline-primary" type="submit" value="Submit">  
+        <div>
+    </form>
+
+{% endblock %}

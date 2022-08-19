@@ -1,0 +1,71 @@
+:root {
+    --backgroundColor-transparency: 0.7;
+    --backgroundColor: rgba(227, 224, 213, 0.858);
+    --border-color: black;
+    --textColor: #000000;
+    --table-backgroundColor: rgb(189, 65, 65);
+    --table-borderColor: black;
+  }
+
+/* .background-image {
+    background-image: url("{%static 'img/background.jpg'%}");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+} */
+
+.div-center {
+/* box properties */
+    border-color: var(--border-color);
+    margin: 100px auto 10px auto;
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    width: 600px;
+    border-radius: 10px;
+/* font */
+    font-family:Arial, Helvetica, sans-serif;
+    color: var(--textColor);
+/* background */
+    background-color: var(--backgroundColor);
+}
+
+/* table, th, td {
+    display:flex;
+    width:100%;
+    padding:5px;
+    background:var(--table-backgroundColor);
+	border:1px solid var(--table-borderColor);
+    border-radius: 5px;
+} */
+
+/* td {
+    margin: auto;
+    word-wrap: break-word;
+} */
+
+button{
+    text-decoration: none;
+    color: var(--textColor);
+    border-color: var(--border-color);
+    margin: 5px;
+}
+
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+    color: var(--textColor);
+    border-color: var(--border-color);
+}
+
+ul {
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margins */
+}
+
+.danger {
+    font-weight: bolder;
+    color: rgb(111, 9, 9) !important;
+}

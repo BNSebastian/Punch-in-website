@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if user.is_superuser%}
+        <table class="table table-striped">
+            <th> User </th>
+            <th> Reason </th>
+            {% comment %} <th> Description </th> {% endcomment %}
+            <th> Date </th>
+            <th> Started: </th>
+            <th> Ended: </th>
+            <th> Trash </th>
+        {% for object in objectList %}
+            <tr>
+                <td> {{object.user}} </td>
+                <td> {{object.reason}} </td>
+                {% comment %} <td> {{object.description}} </td> {% endcomment %}
+                <td> {{object.date}} </td>
+                <td> {{object.start_date}} </td>
+                <td> {{object.end_date}} </td>
+                <td> <a class="danger" href="{% url 'delete' object.id %}"> delete </a> </td>
+                </tr>
+        {% endfor %}
+        </table>
+    {% else %}
+        <p>Hello, guest, if you already have an account, please <a href="{% url 'login' %}">log in</a>. Otherwise, you can <a href="{% url 'register' %}">register</a> one.
+    {% endif %}
+
+{% endblock %}

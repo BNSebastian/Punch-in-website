@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {%  if messages %}
+        {% for message in messages %}
+            <div class="alert alert-warning" role="alert">{{message}}</div>
+        {% endfor%}
+    {% endif %}
+    
+    <div class="d-flex justify-content-center">
+        {% if user.is_authenticated %}
+            <p> Welcome back!</p>
+        {% else %}
+            <p> Hello, guest, if you already have an account, please <a href="{% url 'login' %}">log in</a>. Otherwise, you can <a href="{% url 'register' %}">register</a> one. </p>
+        {% endif %}
+    <div>
+{% endblock %}
+
